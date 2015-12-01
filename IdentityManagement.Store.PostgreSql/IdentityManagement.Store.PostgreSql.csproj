@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B79DBA0D-C075-4E49-8741-8E52550433C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Affecto.IdentityManagement.Store.PostgreSql</RootNamespace>
+    <AssemblyName>Affecto.IdentityManagement.Store.PostgreSql</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Affecto.Configuration.NetFramework.Extensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Configuration.NetFramework.Extensions.1.1.0\lib\net40\Affecto.Configuration.NetFramework.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Affecto.EntityFramework.PostgreSql, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.EntityFramework.PostgreSql.1.4.0\lib\net45\Affecto.EntityFramework.PostgreSql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework6.Npgsql, Version=3.0.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework6.Npgsql.3.0.3\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.0.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.0.3\lib\net45\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201509210709480_Initial.cs" />
+    <Compile Include="Migrations\201509210709480_Initial.Designer.cs">
+      <DependentUpon>201509210709480_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509231150102_UserCustomPropertiesAdded.cs" />
+    <Compile Include="Migrations\201509231150102_UserCustomPropertiesAdded.Designer.cs">
+      <DependentUpon>201509231150102_UserCustomPropertiesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510011324016_PasswordAdded.cs" />
+    <Compile Include="Migrations\201510011324016_PasswordAdded.Designer.cs">
+      <DependentUpon>201510011324016_PasswordAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511041053452_CreateAdminUser.cs" />
+    <Compile Include="Migrations\201511041053452_CreateAdminUser.Designer.cs">
+      <DependentUpon>201511041053452_CreateAdminUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511131046417_AddPermissionsForViewingAndAdministeringUsers.cs" />
+    <Compile Include="Migrations\201511131046417_AddPermissionsForViewingAndAdministeringUsers.Designer.cs">
+      <DependentUpon>201511131046417_AddPermissionsForViewingAndAdministeringUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\Identifiers.cs" />
+    <Compile Include="Migrations\IdentityManagementMigration.cs" />
+    <Compile Include="ModuleRegistration.cs" />
+    <Compile Include="PostgreDbContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IdentityManagement.Autofac\IdentityManagement.Autofac.csproj">
+      <Project>{13e41fc3-a383-4325-b405-1795ec6d4527}</Project>
+      <Name>IdentityManagement.Autofac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IdentityManagement.Store.EntityFramework\IdentityManagement.Store.EntityFramework.csproj">
+      <Project>{894624FC-D79F-433C-9338-551233504771}</Project>
+      <Name>IdentityManagement.Store.EntityFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IdentityManagement.Store.PostgreSql.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509210709480_Initial.resx">
+      <DependentUpon>201509210709480_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509231150102_UserCustomPropertiesAdded.resx">
+      <DependentUpon>201509231150102_UserCustomPropertiesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510011324016_PasswordAdded.resx">
+      <DependentUpon>201510011324016_PasswordAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511041053452_CreateAdminUser.resx">
+      <DependentUpon>201511041053452_CreateAdminUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511131046417_AddPermissionsForViewingAndAdministeringUsers.resx">
+      <DependentUpon>201511131046417_AddPermissionsForViewingAndAdministeringUsers.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

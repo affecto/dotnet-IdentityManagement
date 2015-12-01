@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{894624FC-D79F-433C-9338-551233504771}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Affecto.IdentityManagement.Store.EntityFramework</RootNamespace>
+    <AssemblyName>Affecto.IdentityManagement.Store.EntityFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Affecto.Mapping">
+      <HintPath>..\packages\Affecto.Mapping.0.5.0\lib\net40\Affecto.Mapping.dll</HintPath>
+    </Reference>
+    <Reference Include="Affecto.Mapping.AutoMapper, Version=0.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Mapping.AutoMapper.0.6.0\lib\net40\Affecto.Mapping.AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedFiles\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="DbContext.cs" />
+    <Compile Include="DbRepository.cs" />
+    <Compile Include="Mapping\AccountMapper.cs" />
+    <Compile Include="Mapping\OrganizationMapper.cs" />
+    <Compile Include="Migrations\201411111305074_Initial.cs" />
+    <Compile Include="Migrations\201411111305074_Initial.Designer.cs">
+      <DependentUpon>201411111305074_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412220915123_AccountCompositeKeyAdded.cs" />
+    <Compile Include="Migrations\201412220915123_AccountCompositeKeyAdded.Designer.cs">
+      <DependentUpon>201412220915123_AccountCompositeKeyAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502171255064_ExternalGroupNameAddedForGroupAndRole.cs" />
+    <Compile Include="Migrations\201502171255064_ExternalGroupNameAddedForGroupAndRole.Designer.cs">
+      <DependentUpon>201502171255064_ExternalGroupNameAddedForGroupAndRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502181010510_DescriptionForRole.cs" />
+    <Compile Include="Migrations\201502181010510_DescriptionForRole.Designer.cs">
+      <DependentUpon>201502181010510_DescriptionForRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502251108590_StringPropertyMaxLengthsChanged.cs" />
+    <Compile Include="Migrations\201502251108590_StringPropertyMaxLengthsChanged.Designer.cs">
+      <DependentUpon>201502251108590_StringPropertyMaxLengthsChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506090658009_RemovedClassTypeFromAccount.cs" />
+    <Compile Include="Migrations\201506090658009_RemovedClassTypeFromAccount.Designer.cs">
+      <DependentUpon>201506090658009_RemovedClassTypeFromAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510011322598_UserCustomPropertiesAndPassword.cs" />
+    <Compile Include="Migrations\201510011322598_UserCustomPropertiesAndPassword.Designer.cs">
+      <DependentUpon>201510011322598_UserCustomPropertiesAndPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleRegistration.cs" />
+    <Compile Include="IDbContext.cs" />
+    <Compile Include="Queries\AccountExistsQuery.cs" />
+    <Compile Include="Queries\AccountsQuery.cs" />
+    <Compile Include="Queries\GroupExistsQuery.cs" />
+    <Compile Include="Queries\OrganizationExistsQuery.cs" />
+    <Compile Include="Queries\OrganizationQuery.cs" />
+    <Compile Include="Queries\RoleExistsQuery.cs" />
+    <Compile Include="Queries\RoleQuery.cs" />
+    <Compile Include="Queries\AccountQuery.cs" />
+    <Compile Include="Queries\UsersByCustomPropertyQuery.cs" />
+    <Compile Include="Queries\UserQuery.cs" />
+    <Compile Include="Queries\PermissionQuery.cs" />
+    <Compile Include="QueryService.cs" />
+    <Compile Include="Mapping\GroupMapper.cs" />
+    <Compile Include="Mapping\PermissionMapper.cs" />
+    <Compile Include="Mapping\RoleMapper.cs" />
+    <Compile Include="Mapping\UserMapper.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\GroupQuery.cs" />
+    <Compile Include="Queries\RoleWithPermissionsQuery.cs" />
+    <Compile Include="Queries\RolesQuery.cs" />
+    <Compile Include="Queries\UserByAccountQuery.cs" />
+    <Compile Include="Queries\UserGroupsQuery.cs" />
+    <Compile Include="Queries\UserByIdQuery.cs" />
+    <Compile Include="Queries\GroupWithUsersQuery.cs" />
+    <Compile Include="Queries\UserWithRolesQuery.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IdentityManagement.Commanding\IdentityManagement.Commanding.csproj">
+      <Project>{E902DAA3-A580-48BE-84EC-D23513058DBF}</Project>
+      <Name>IdentityManagement.Commanding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IdentityManagement.Querying\IdentityManagement.Querying.csproj">
+      <Project>{bc44dbeb-0188-4aad-a95c-3512b7f6a698}</Project>
+      <Name>IdentityManagement.Querying</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IdentityManagement.Store\IdentityManagement.Store.csproj">
+      <Project>{8c6080df-20ae-4ec1-b0d4-6d687fcfe61a}</Project>
+      <Name>IdentityManagement.Store</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201411111305074_Initial.resx">
+      <DependentUpon>201411111305074_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412220915123_AccountCompositeKeyAdded.resx">
+      <DependentUpon>201412220915123_AccountCompositeKeyAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502171255064_ExternalGroupNameAddedForGroupAndRole.resx">
+      <DependentUpon>201502171255064_ExternalGroupNameAddedForGroupAndRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502181010510_DescriptionForRole.resx">
+      <DependentUpon>201502181010510_DescriptionForRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502251108590_StringPropertyMaxLengthsChanged.resx">
+      <DependentUpon>201502251108590_StringPropertyMaxLengthsChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506090658009_RemovedClassTypeFromAccount.resx">
+      <DependentUpon>201506090658009_RemovedClassTypeFromAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510011322598_UserCustomPropertiesAndPassword.resx">
+      <DependentUpon>201510011322598_UserCustomPropertiesAndPassword.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{13E41FC3-A383-4325-B405-1795EC6D4527}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Affecto.IdentityManagement.Autofac</RootNamespace>
+    <AssemblyName>Affecto.IdentityManagement.Autofac</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Affecto.Patterns.Cqrs">
+      <HintPath>..\packages\Affecto.Patterns.Cqrs.2.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Cqrs.dll</HintPath>
+    </Reference>
+    <Reference Include="Affecto.Patterns.Cqrs.Autofac">
+      <HintPath>..\packages\Affecto.Patterns.Cqrs.Autofac.1.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Cqrs.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Affecto.Patterns.Domain, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Domain.1.1.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Affecto.Patterns.Domain.Autofac, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Domain.Autofac.1.1.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedFiles\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ModuleRegistration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="IdentityManagement.Autofac.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IdentityManagement.ApplicationServices\IdentityManagement.ApplicationServices.csproj">
+      <Project>{576b6d82-8500-46db-a679-f1bc04dd4579}</Project>
+      <Name>IdentityManagement.ApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IdentityManagement.Commanding\IdentityManagement.Commanding.csproj">
+      <Project>{e902daa3-a580-48be-84ec-d23513058dbf}</Project>
+      <Name>IdentityManagement.Commanding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IdentityManagement.Interfaces\IdentityManagement.Interfaces.csproj">
+      <Project>{26039E77-86F2-42FE-BE6F-E94C8688C9CD}</Project>
+      <Name>IdentityManagement.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IdentityManagement.Querying\IdentityManagement.Querying.csproj">
+      <Project>{bc44dbeb-0188-4aad-a95c-3512b7f6a698}</Project>
+      <Name>IdentityManagement.Querying</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IdentityManagement.Store.EntityFramework\IdentityManagement.Store.EntityFramework.csproj">
+      <Project>{894624fc-d79f-433c-9338-551233504771}</Project>
+      <Name>IdentityManagement.Store.EntityFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
