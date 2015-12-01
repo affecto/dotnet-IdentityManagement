@@ -35,18 +35,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Affecto.Patterns.Cqrs">
+    <Reference Include="Affecto.Patterns.Cqrs, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Affecto.Patterns.Cqrs.2.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Cqrs.dll</HintPath>
-    </Reference>
-    <Reference Include="Affecto.Patterns.Cqrs.Autofac">
-      <HintPath>..\packages\Affecto.Patterns.Cqrs.Autofac.1.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Cqrs.Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Affecto.Patterns.Domain, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Affecto.Patterns.Domain.1.1.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Affecto.Patterns.Domain.Autofac, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Affecto.Patterns.Domain.Autofac.1.1.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.Autofac.dll</HintPath>
+    <Reference Include="Affecto.Patterns.Cqrs.Autofac, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Cqrs.Autofac.2.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Cqrs.Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Affecto.Patterns.Domain, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Domain.2.0.1\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Affecto.Patterns.Domain.Autofac, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Patterns.Domain.Autofac.2.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Autofac">

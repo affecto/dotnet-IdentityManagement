@@ -35,11 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Affecto.Mapping">
-      <HintPath>..\packages\Affecto.Mapping.0.5.0\lib\net40\Affecto.Mapping.dll</HintPath>
+    <Reference Include="Affecto.Mapping, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Mapping.1.0.0\lib\net40\Affecto.Mapping.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Affecto.Mapping.AutoMapper, Version=0.6.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Affecto.Mapping.AutoMapper.0.6.0\lib\net40\Affecto.Mapping.AutoMapper.dll</HintPath>
+    <Reference Include="Affecto.Mapping.AutoMapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Mapping.AutoMapper.1.0.0\lib\net40\Affecto.Mapping.AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">

@@ -39,19 +39,16 @@
       <HintPath>..\packages\Affecto.AuditTrail.Interfaces.2.0.0\lib\net451\Affecto.AuditTrail.Interfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Affecto.Authentication.Claims, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Affecto.Authentication.Claims.1.3.0\lib\net45\Affecto.Authentication.Claims.dll</HintPath>
+    <Reference Include="Affecto.Authentication.Claims, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Affecto.Authentication.Claims.2.2.0\lib\net45\Affecto.Authentication.Claims.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Affecto.Authentication.Passwords, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Affecto.Authentication.Passwords.1.0.0\lib\net451\Affecto.Authentication.Passwords.dll</HintPath>
+      <HintPath>..\packages\Affecto.Authentication.Passwords.1.0.0\lib\net45\Affecto.Authentication.Passwords.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Affecto.Patterns.Cqrs, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Affecto.Patterns.Cqrs.2.0.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Cqrs.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Affecto.Patterns.Domain, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Affecto.Patterns.Domain.1.1.0\lib\portable-net45+sl50+win+wpa81+wp80\Affecto.Patterns.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Affecto.Patterns.Specification, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
