@@ -3,12 +3,10 @@
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
-    <title>$id$</title>
     <authors>$author$</authors>
-    <owners>Affecto</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Added a migration for creating permissions for viewing and administering users.</releaseNotes>
-    <copyright>Copyright © Affecto 2014-2015</copyright>
+    <projectUrl>https://github.com/affecto/dotnet-IdentityManagement</projectUrl>
+    <tags>affecto identitymanagement identity management user users role roles group groups store database postgre sql postgresql postgres</tags>
+    <releaseNotes>Moved to GitHub.</releaseNotes>
   </metadata>
 </package>
