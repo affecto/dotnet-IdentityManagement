@@ -95,9 +95,14 @@
     <Compile Include="Migrations\201511131046417_AddPermissionsForViewingAndAdministeringUsers.Designer.cs">
       <DependentUpon>201511131046417_AddPermissionsForViewingAndAdministeringUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512171329305_AddPermissionForMaintainingAdministrators.cs" />
+    <Compile Include="Migrations\201512171329305_AddPermissionForMaintainingAdministrators.Designer.cs">
+      <DependentUpon>201512171329305_AddPermissionForMaintainingAdministrators.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Identifiers.cs" />
     <Compile Include="Migrations\IdentityManagementMigration.cs" />
+    <Compile Include="Migrations\RolePermissionMigration.cs" />
     <Compile Include="ModuleRegistration.cs" />
     <Compile Include="PostgreDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,6 +121,8 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="DatabaseConnectionStrings.config" />
+    <None Include="DatabaseSchemas.config" />
     <None Include="IdentityManagement.Store.PostgreSql.nuspec">
       <SubType>Designer</SubType>
     </None>
@@ -138,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511131046417_AddPermissionsForViewingAndAdministeringUsers.resx">
       <DependentUpon>201511131046417_AddPermissionsForViewingAndAdministeringUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512171329305_AddPermissionForMaintainingAdministrators.resx">
+      <DependentUpon>201512171329305_AddPermissionForMaintainingAdministrators.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
