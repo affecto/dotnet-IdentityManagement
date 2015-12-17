@@ -19,6 +19,6 @@
 
 | Target | Build |
 | -----------------------|------------------|
-| Project | [![Build status](https://ci.appveyor.com/api/projects/status/s4oybwrnu3xhaxky?svg=true)](https://ci.appveyor.com/project/johannesvaltonen/dotnet-identitymanagement) |
-| Master branch | [![Build status](https://ci.appveyor.com/api/projects/status/s4oybwrnu3xhaxky/branch/master?svg=true)](https://ci.appveyor.com/project/johannesvaltonen/dotnet-identitymanagement/branch/master) |
-| Dev branch | [![Build status](https://ci.appveyor.com/api/projects/status/s4oybwrnu3xhaxky/branch/dev?svg=true)](https://ci.appveyor.com/project/johannesvaltonen/dotnet-identitymanagement/branch/dev) |
+| Project | [![Build status](https://ci.appveyor.com/api/projects/status/s4oybwrnu3xhaxky?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-identitymanagement) |
+| Master branch | [![Build status](https://ci.appveyor.com/api/projects/status/s4oybwrnu3xhaxky/branch/master?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-identitymanagement/branch/master) |
+| Dev branch | [![Build status](https://ci.appveyor.com/api/projects/status/s4oybwrnu3xhaxky/branch/dev?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-identitymanagement/branch/dev) |
