@@ -7,6 +7,7 @@ namespace Affecto.IdentityManagement.Interfaces.Model
         Guid Id { get; }
         string Name { get; }
         string Description { get; }
+        string Email { get; set; }
         bool IsDisabled { get; set; }
     }
 }

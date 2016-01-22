@@ -16,11 +16,19 @@ namespace Affecto.IdentityManagement.AcceptanceTests.Features
     {
         private List<IOrganization> organizations;
 
-        [Given(@"an organization '(.+)' is added with a descrption '(.+)'")]
-        [When(@"an organization '(.+)' is added with a descrption '(.+)'")]
+        [Given(@"an organization '(.+)' is added with a description '(.+)'")]
+        [When(@"an organization '(.+)' is added with a description '(.+)'")]
         public void WhenAnOrganizationIsAddedWithADescrption(string name, string description)
         {
-            IOrganization organization = IdentityManagementService.CreateOrganization(name, description);
+            IOrganization organization = IdentityManagementService.CreateOrganization(name, description, string.Empty);
+            nameIdentifierPairs.Add(name, organization.Id);
+        }
+
+        [Given(@"an organization '(.+)' is added with an email '(.+)'")]
+        [When(@"an organization '(.+)' is added with an email '(.+)'")]
+        public void WhenAnOrganizationIsAddedWithAnEmail(string name, string email)
+        {
+            IOrganization organization = IdentityManagementService.CreateOrganization(name, string.Empty, email);
             nameIdentifierPairs.Add(name, organization.Id);
         }
 
@@ -40,34 +48,35 @@ namespace Affecto.IdentityManagement.AcceptanceTests.Features
         public void WhenTheNameOfTheOrganizationIsChangedTo(string oldName, string newName)
         {
             Guid organizationId = nameIdentifierPairs[oldName];
-            Try(() => IdentityManagementService.UpdateOrganization(organizationId, newName, string.Empty, false));
+            Try(() => IdentityManagementService.UpdateOrganization(organizationId, newName, string.Empty, string.Empty, false));
         }
 
         [When(@"the description of the organization '(.+)' is cleared")]
+        [When(@"the email of the organization '(.*)' is cleared")]
         public void WhenTheDescriptionOfTheOrganizationIsCleared(string name)
         {
             Guid organizationId = nameIdentifierPairs[name];
-            Try(() => IdentityManagementService.UpdateOrganization(organizationId, name, string.Empty, false));
+            Try(() => IdentityManagementService.UpdateOrganization(organizationId, name, string.Empty, string.Empty, false));
         }
 
         [When(@"the organization '(.+)' is disabled")]
         public void WhenTheOrganizationIsDisabled(string name)
         {
             Guid organizationId = nameIdentifierPairs[name];
-            Try(() => IdentityManagementService.UpdateOrganization(organizationId, name, string.Empty, true));
+            Try(() => IdentityManagementService.UpdateOrganization(organizationId, name, string.Empty, string.Empty, true));
         }
 
         [When(@"an organization with no name is added")]
         public void WhenAnOrganizationWithNoNameIsAdded()
         {
-            Try(() => IdentityManagementService.CreateOrganization(string.Empty, string.Empty));
+            Try(() => IdentityManagementService.CreateOrganization(string.Empty, string.Empty, string.Empty));
         }
 
         [When(@"the name of the organization '(.+)' is cleared")]
         public void WhenTheNameOfTheOrganizationIsCleared(string organization)
         {
             Guid organizationId = nameIdentifierPairs[organization];
-            Try(() => IdentityManagementService.UpdateOrganization(organizationId, string.Empty, string.Empty, false));
+            Try(() => IdentityManagementService.UpdateOrganization(organizationId, string.Empty, string.Empty, string.Empty, false));
         }
 
         [Then(@"the following organizations exist:")]
@@ -77,7 +86,9 @@ namespace Affecto.IdentityManagement.AcceptanceTests.Features
             Assert.AreEqual(expectedOrganizations.RowCount, organizations.Count);
             foreach (TableRow expectedOrganization in expectedOrganizations.Rows)
             {
-                Assert.IsTrue(organizations.Any(o => o.Name.Equals(expectedOrganization["Name"]) && o.Description.Equals(expectedOrganization["Description"])),
+                Assert.IsTrue(organizations.Any(o => o.Name.Equals(expectedOrganization["Name"])
+                    && o.Description.Equals(expectedOrganization["Description"])
+                    && o.Email.Equals(expectedOrganization["Email"])),
                     expectedOrganization.ToTableString());
             }
         }

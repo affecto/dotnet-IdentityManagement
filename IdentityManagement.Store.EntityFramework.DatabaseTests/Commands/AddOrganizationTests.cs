@@ -16,8 +16,9 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests.Command
             Guid organizationId = Guid.NewGuid();
             const string organizationName = "development";
             const string organizationDescription = "some people";
+            const string organizationEmail = "development@company.com";
 
-            sut.AddOrganization(organizationId, organizationName, organizationDescription);
+            sut.AddOrganization(organizationId, organizationName, organizationDescription, organizationEmail);
             sut.SaveChanges();
 
             using (DbContext readContext = new DbContext())
@@ -27,6 +28,7 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests.Command
                 Assert.AreEqual(organizationId, organization.Id);
                 Assert.AreEqual(organizationName, organization.Name);
                 Assert.AreEqual(organizationDescription, organization.Description);
+                Assert.AreEqual(organization.Email, organizationEmail);
             }
         }
 
@@ -34,14 +36,14 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests.Command
         [ExpectedException(typeof(DbEntityValidationException))]
         public void AddOrganizationWithNoName()
         {
-            sut.AddOrganization(Guid.NewGuid(), null, "description");
+            sut.AddOrganization(Guid.NewGuid(), null, "description", "e@ma.il");
             dbContext.SaveChanges();
         }
 
         [TestMethod]
         public void AddOrganizationWithNoDescription()
         {
-            sut.AddOrganization(Guid.NewGuid(), "users", null);
+            sut.AddOrganization(Guid.NewGuid(), "users", null, "e@ma.il");
             sut.SaveChanges();
 
             using (DbContext readContext = new DbContext())
@@ -58,9 +60,23 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests.Command
         {
             Guid organizationId = Guid.NewGuid();
 
-            sut.AddOrganization(organizationId, "name", null);
-            sut.AddOrganization(organizationId, "another name", null);
+            sut.AddOrganization(organizationId, "name", null, null);
+            sut.AddOrganization(organizationId, "another name", null, null);
             sut.SaveChanges();
+        }
+
+        [TestMethod]
+        public void AddOrganizationWithNoEmail()
+        {
+            sut.AddOrganization(Guid.NewGuid(), "users", "description", null);
+            sut.SaveChanges();
+
+            using (DbContext readContext = new DbContext())
+            {
+                Organization organization = readContext.Organizations.Single();
+
+                Assert.IsNull(organization.Email);
+            }
         }
     }
 }

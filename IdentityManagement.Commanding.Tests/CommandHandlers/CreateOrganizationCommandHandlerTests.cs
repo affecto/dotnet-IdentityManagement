@@ -24,7 +24,7 @@ namespace Affecto.IdentityManagement.Commanding.Tests.CommandHandlers
         [ExpectedException(typeof(ArgumentException))]
         public void OrganizationCannotBeCreatedWithEmptyId()
         {
-            sut.Execute(new CreateOrganizationCommand(Guid.Empty, "name", "description"));
+            sut.Execute(new CreateOrganizationCommand(Guid.Empty, "name", "description", "e@ma.il"));
         }
     }
 }
