@@ -295,12 +295,12 @@ namespace Affecto.IdentityManagement.ApplicationServices
             commandBus.Value.Send(Envelope.Create(command));
         }
 
-        public IOrganization CreateOrganization(string name, string description, string email)
+        public IOrganization CreateOrganization(string name, string description)
         {
             userContext.CheckPermission(Permissions.UserMaintenance);
 
             Guid organizationId = Guid.NewGuid();
-            ICommand command = new CreateOrganizationCommand(organizationId, name, description, email);
+            ICommand command = new CreateOrganizationCommand(organizationId, name, description);
             commandBus.Value.Send(Envelope.Create(command));
             return GetOrganization(organizationId);
         }

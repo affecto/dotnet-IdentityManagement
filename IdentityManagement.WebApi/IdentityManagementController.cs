@@ -491,7 +491,7 @@ namespace Affecto.IdentityManagement.WebApi
                 throw new ArgumentException("Organization name must be defined.");
             }
 
-            Organization result = mapperFactory.CreateOrganizationMapper().Map(identityManagementService.CreateOrganization(organization.Name, organization.Description, organization.Email));
+            Organization result = mapperFactory.CreateOrganizationMapper().Map(identityManagementService.CreateOrganization(organization.Name, organization.Description));
             return Ok(result);
         }
 

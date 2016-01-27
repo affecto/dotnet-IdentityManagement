@@ -15,7 +15,7 @@ namespace Affecto.IdentityManagement.Commanding
         void AddGroup(Guid id, string name, string description, string externalGroupName);
         void AddRole(Guid id, string name, string description, string externalGroupName);
         void AddUser(Guid id, string name);
-        void AddOrganization(Guid id, string name, string description, string email);
+        void AddOrganization(Guid id, string name, string description);
         Organization GetOrganization(Guid id);
         Group GetGroup(Guid id);
         Account GetUserAccount(Guid userId, AccountType type);

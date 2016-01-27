@@ -155,9 +155,9 @@ namespace Affecto.IdentityManagement.Store.EntityFramework
             }
         }
 
-        public void AddOrganization(Guid id, string name, string description, string email)
+        public void AddOrganization(Guid id, string name, string description)
         {
-            dbContext.Organizations.Add(new Organization { Id = id, Name = name, Description = description, Email = email });
+            dbContext.Organizations.Add(new Organization { Id = id, Name = name, Description = description });
         }
 
         public Organization GetOrganization(Guid id)

@@ -35,7 +35,7 @@ namespace Affecto.IdentityManagement.Commanding.CommandHandlers
                     throw new OrganizationWithSameNameAlreadyExistsException(command.Name);
                 }
 
-                repository.AddOrganization(command.Id, command.Name, command.Description, command.Email);
+                repository.AddOrganization(command.Id, command.Name, command.Description);
                 repository.SaveChanges();
 
                 auditTrail.AddEntry(command.Id, command.Name, "Organisaatio luotu");

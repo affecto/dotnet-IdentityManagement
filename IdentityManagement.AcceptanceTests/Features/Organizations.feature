@@ -7,13 +7,13 @@ Scenario: Organizations cannot be added without a permission
 
 Scenario: Adding organizations
     When an organization 'R&D' is added with a description 'Research and development'
-	And an organization 'Management' is added with an email 'cooldudes@company.com'
+	And an organization 'Management' is added
     And an organization 'Cleaners' is added
     Then the following organizations exist:
-    | Name       | Description              | Email                 |
-    | R&D        | Research and development |                       |
-    | Management |                          | cooldudes@company.com |
-    | Cleaners   |                          |                       |
+    | Name       | Description              | Email |
+    | R&D        | Research and development |       |
+    | Management |                          |       |
+    | Cleaners   |                          |       |
     And all organizations are enabled
 
 Scenario: Adding an organization with no name is not possible
@@ -74,8 +74,8 @@ Scenario: Updating organization with duplicate name
     Then operation fails because organization with the same name already exists
 
 Scenario: Changing organization email
-    Given an organization 'R&D' is added with an email 'rd@company.com'
-    When the email of the organization 'R&D' is cleared
+    Given an organization 'R&D' is added
+    When the email of the organization 'R&D' is changed to 'em@ai.l'
     Then the following organizations exist:
-    | Name | Description | Email |
-    | R&D  |             |       |
+    | Name | Description | Email   |
+    | R&D  |             | em@ai.l |

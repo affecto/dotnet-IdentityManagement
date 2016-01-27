@@ -97,7 +97,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
     testRunner.When("an organization \'R&D\' is added with a description \'Research and development\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.And("an organization \'Management\' is added with an email \'cooldudes@company.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("an organization \'Management\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
     testRunner.And("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -112,7 +112,7 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "Management",
                         "",
-                        "cooldudes@company.com"});
+                        ""});
             table1.AddRow(new string[] {
                         "Cleaners",
                         "",
@@ -338,9 +338,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 76
 this.ScenarioSetup(scenarioInfo);
 #line 77
-    testRunner.Given("an organization \'R&D\' is added with an email \'rd@company.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("an organization \'R&D\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 78
-    testRunner.When("the email of the organization \'R&D\' is cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("the email of the organization \'R&D\' is changed to \'em@ai.l\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
@@ -349,7 +349,7 @@ this.ScenarioSetup(scenarioInfo);
             table4.AddRow(new string[] {
                         "R&D",
                         "",
-                        ""});
+                        "em@ai.l"});
 #line 79
     testRunner.Then("the following organizations exist:", ((string)(null)), table4, "Then ");
 #line hidden
