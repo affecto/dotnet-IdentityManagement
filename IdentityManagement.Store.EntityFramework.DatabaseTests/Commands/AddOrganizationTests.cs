@@ -63,19 +63,5 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests.Command
             sut.AddOrganization(organizationId, "another name", null);
             sut.SaveChanges();
         }
-
-        [TestMethod]
-        public void AddOrganizationWithNoEmail()
-        {
-            sut.AddOrganization(Guid.NewGuid(), "users", "description");
-            sut.SaveChanges();
-
-            using (DbContext readContext = new DbContext())
-            {
-                Organization organization = readContext.Organizations.Single();
-
-                Assert.IsNull(organization.Email);
-            }
-        }
     }
 }
