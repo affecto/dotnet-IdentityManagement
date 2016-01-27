@@ -41,7 +41,7 @@ namespace Affecto.IdentityManagement.Interfaces
 
         IEnumerable<IOrganization> GetOrganizations();
         IOrganization GetOrganization(Guid id);
-        void UpdateOrganization(Guid id, string name, string description, bool isDisabled);
+        void UpdateOrganization(Guid id, string name, string description, string email, bool isDisabled);
         IOrganization CreateOrganization(string name, string description);
         IUserListItem CreateUser(string name, IEnumerable<KeyValuePair<string, string>> customProperties);
     }

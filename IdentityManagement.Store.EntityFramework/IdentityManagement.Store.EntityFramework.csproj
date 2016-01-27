@@ -105,6 +105,10 @@
     <Compile Include="Migrations\201510011322598_UserCustomPropertiesAndPassword.Designer.cs">
       <DependentUpon>201510011322598_UserCustomPropertiesAndPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601221145502_OrganizationEmail.cs" />
+    <Compile Include="Migrations\201601221145502_OrganizationEmail.Designer.cs">
+      <DependentUpon>201601221145502_OrganizationEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModuleRegistration.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="Queries\AccountExistsQuery.cs" />
@@ -177,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510011322598_UserCustomPropertiesAndPassword.resx">
       <DependentUpon>201510011322598_UserCustomPropertiesAndPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601221145502_OrganizationEmail.resx">
+      <DependentUpon>201601221145502_OrganizationEmail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

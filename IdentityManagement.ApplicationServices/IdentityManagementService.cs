@@ -287,11 +287,11 @@ namespace Affecto.IdentityManagement.ApplicationServices
             return mapper.Map(queryService.GetOrganization(id));
         }
 
-        public void UpdateOrganization(Guid id, string name, string description, bool isDisabled)
+        public void UpdateOrganization(Guid id, string name, string description, string email, bool isDisabled)
         {
             userContext.CheckPermission(Permissions.UserMaintenance);
 
-            var command = new UpdateOrganizationCommand(id, name, description, isDisabled);
+            var command = new UpdateOrganizationCommand(id, name, description, email, isDisabled);
             commandBus.Value.Send(Envelope.Create(command));
         }
 
