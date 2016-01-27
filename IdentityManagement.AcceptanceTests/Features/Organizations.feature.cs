@@ -10,12 +10,12 @@
 //  </auto-generated>
 // ------------------------------------------------------------------------------
 #region Designer generated code
-
-using TechTalk.SpecFlow;
-
 #pragma warning disable
 namespace Affecto.IdentityManagement.AcceptanceTests.Features
 {
+    using TechTalk.SpecFlow;
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
@@ -48,7 +48,7 @@ namespace Affecto.IdentityManagement.AcceptanceTests.Features
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
                         && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "Organizations")))
             {
-                OrganizationsFeature.FeatureSetup(null);
+                Affecto.IdentityManagement.AcceptanceTests.Features.OrganizationsFeature.FeatureSetup(null);
             }
         }
         
@@ -95,22 +95,31 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 9
-    testRunner.When("an organization \'R&D\' is added with a descrption \'Research and development\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("an organization \'R&D\' is added with a description \'Research and development\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
+ testRunner.And("an organization \'Management\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
     testRunner.And("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description"});
+                        "Description",
+                        "Email"});
             table1.AddRow(new string[] {
                         "R&D",
-                        "Research and development"});
+                        "Research and development",
+                        ""});
+            table1.AddRow(new string[] {
+                        "Management",
+                        "",
+                        ""});
             table1.AddRow(new string[] {
                         "Cleaners",
+                        "",
                         ""});
-#line 11
+#line 12
     testRunner.Then("the following organizations exist:", ((string)(null)), table1, "Then ");
-#line 15
+#line 17
     testRunner.And("all organizations are enabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -122,11 +131,11 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void AddingAnOrganizationWithNoNameIsNotPossible()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding an organization with no name is not possible", ((string[])(null)));
-#line 17
-this.ScenarioSetup(scenarioInfo);
-#line 18
-    testRunner.When("an organization with no name is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
+this.ScenarioSetup(scenarioInfo);
+#line 20
+    testRunner.When("an organization with no name is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
     testRunner.Then("adding the organization fails", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -138,15 +147,15 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ChangingOrganizationNameCannotBeAddedWithoutAPermission()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changing organization name cannot be added without a permission", ((string[])(null)));
-#line 21
-this.ScenarioSetup(scenarioInfo);
-#line 22
-    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 23
-    testRunner.When("the user has no permission to maintain user data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 24
-    testRunner.And("the name of the organization \'Cleaners\' is changed to \'Sanitators\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 25
+    testRunner.When("the user has no permission to maintain user data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+    testRunner.And("the name of the organization \'Cleaners\' is changed to \'Sanitators\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
     testRunner.Then("updating the organization fails because of invalid permissions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -158,20 +167,22 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ChangingOrganizationName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changing organization name", ((string[])(null)));
-#line 27
-this.ScenarioSetup(scenarioInfo);
-#line 28
-    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 29
+this.ScenarioSetup(scenarioInfo);
+#line 30
+    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 31
     testRunner.When("the name of the organization \'Cleaners\' is changed to \'Sanitators\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description"});
+                        "Description",
+                        "Email"});
             table2.AddRow(new string[] {
                         "Sanitators",
+                        "",
                         ""});
-#line 30
+#line 32
     testRunner.Then("the following organizations exist:", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -183,33 +194,33 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ClearingTheNameOfAnOrganizationIsNotPossible()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Clearing the name of an organization is not possible", ((string[])(null)));
-#line 34
-this.ScenarioSetup(scenarioInfo);
-#line 35
-    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 36
-    testRunner.When("the name of the organization \'Cleaners\' is cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 37
+    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 38
+    testRunner.When("the name of the organization \'Cleaners\' is cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 39
     testRunner.Then("updating the organization fails", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Changing organization description cannot be added without a permission")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Organization cannot be updated without a permission")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Organizations")]
-        public virtual void ChangingOrganizationDescriptionCannotBeAddedWithoutAPermission()
+        public virtual void OrganizationCannotBeUpdatedWithoutAPermission()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changing organization description cannot be added without a permission", ((string[])(null)));
-#line 39
-this.ScenarioSetup(scenarioInfo);
-#line 40
-    testRunner.Given("an organization \'R&D\' is added with a descrption \'Research and development\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Organization cannot be updated without a permission", ((string[])(null)));
 #line 41
-    testRunner.When("the user has no permission to maintain user data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 42
-    testRunner.And("the description of the organization \'R&D\' is cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Given("an organization \'R&D\' is added with a description \'Research and development\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 43
+    testRunner.When("the user has no permission to maintain user data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 44
+    testRunner.And("the description of the organization \'R&D\' is cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
     testRunner.Then("updating the organization fails because of invalid permissions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -221,40 +232,42 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ChangingOrganizationDescription()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changing organization description", ((string[])(null)));
-#line 45
-this.ScenarioSetup(scenarioInfo);
-#line 46
-    testRunner.Given("an organization \'R&D\' is added with a descrption \'Research and development\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 47
+this.ScenarioSetup(scenarioInfo);
+#line 48
+    testRunner.Given("an organization \'R&D\' is added with a description \'Research and development\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 49
     testRunner.When("the description of the organization \'R&D\' is cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
-                        "Description"});
+                        "Description",
+                        "Email"});
             table3.AddRow(new string[] {
                         "R&D",
+                        "",
                         ""});
-#line 48
+#line 50
     testRunner.Then("the following organizations exist:", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Disabling an organization cannot be added without a permission")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Organization cannot be disabled without a permission")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Organizations")]
-        public virtual void DisablingAnOrganizationCannotBeAddedWithoutAPermission()
+        public virtual void OrganizationCannotBeDisabledWithoutAPermission()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Disabling an organization cannot be added without a permission", ((string[])(null)));
-#line 52
-this.ScenarioSetup(scenarioInfo);
-#line 53
-    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Organization cannot be disabled without a permission", ((string[])(null)));
 #line 54
-    testRunner.When("the user has no permission to maintain user data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 55
-    testRunner.And("the organization \'Cleaners\' is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 56
+    testRunner.When("the user has no permission to maintain user data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 57
+    testRunner.And("the organization \'Cleaners\' is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
     testRunner.Then("updating the organization fails because of invalid permissions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -266,13 +279,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void DisablingAnOrganization()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Disabling an organization", ((string[])(null)));
-#line 58
-this.ScenarioSetup(scenarioInfo);
-#line 59
-    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 60
-    testRunner.When("the organization \'Cleaners\' is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 61
+    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 62
+    testRunner.When("the organization \'Cleaners\' is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 63
     testRunner.Then("the organization \'Cleaners\' is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -284,13 +297,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CreatingOrganizationWithDuplicateName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Creating organization with duplicate name", ((string[])(null)));
-#line 63
-this.ScenarioSetup(scenarioInfo);
-#line 64
-    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 65
-    testRunner.When("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 66
+    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 67
+    testRunner.When("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 68
     testRunner.Then("operation fails because organization with the same name already exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -302,16 +315,43 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void UpdatingOrganizationWithDuplicateName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Updating organization with duplicate name", ((string[])(null)));
-#line 68
-this.ScenarioSetup(scenarioInfo);
-#line 69
-    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 70
-    testRunner.And("an organization \'Sanitators\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 71
-    testRunner.When("the name of the organization \'Cleaners\' is changed to \'Sanitators\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("an organization \'Cleaners\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 72
+    testRunner.And("an organization \'Sanitators\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+    testRunner.When("the name of the organization \'Cleaners\' is changed to \'Sanitators\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 74
     testRunner.Then("operation fails because organization with the same name already exists", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Changing organization email")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Organizations")]
+        public virtual void ChangingOrganizationEmail()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changing organization email", ((string[])(null)));
+#line 76
+this.ScenarioSetup(scenarioInfo);
+#line 77
+    testRunner.Given("an organization \'R&D\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 78
+    testRunner.When("the email of the organization \'R&D\' is changed to \'em@ai.l\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Description",
+                        "Email"});
+            table4.AddRow(new string[] {
+                        "R&D",
+                        "",
+                        "em@ai.l"});
+#line 79
+    testRunner.Then("the following organizations exist:", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

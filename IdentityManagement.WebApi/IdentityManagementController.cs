@@ -474,7 +474,7 @@ namespace Affecto.IdentityManagement.WebApi
                 throw new ArgumentException("Organization name must be defined.");
             }
 
-            identityManagementService.UpdateOrganization(organizationId, command.Name, command.Description, command.IsDisabled);
+            identityManagementService.UpdateOrganization(organizationId, command.Name, command.Description, command.Email, command.IsDisabled);
             return Ok();
         }
 

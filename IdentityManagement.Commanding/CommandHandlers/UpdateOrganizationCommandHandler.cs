@@ -37,6 +37,7 @@ namespace Affecto.IdentityManagement.Commanding.CommandHandlers
 
                 organization.Name = command.Name;
                 organization.Description = command.Description;
+                organization.Email = command.Email;
                 organization.IsDisabled = command.IsDisabled;
                 repository.SaveChanges();
 

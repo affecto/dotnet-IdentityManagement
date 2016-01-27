@@ -27,6 +27,7 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests.Command
                 Assert.AreEqual(organizationId, organization.Id);
                 Assert.AreEqual(organizationName, organization.Name);
                 Assert.AreEqual(organizationDescription, organization.Description);
+                Assert.AreEqual(null, organization.Email);
             }
         }
 
