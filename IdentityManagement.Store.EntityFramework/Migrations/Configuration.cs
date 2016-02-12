@@ -17,6 +17,7 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.Migrations
             if (!context.Roles.Any())
             {
                 CreateAdminRole(context);
+                CreateModifyRole(context);
             }
         }
 
@@ -37,6 +38,18 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.Migrations
                 roleAdmin.Permissions.Add(context.Permissions.FirstOrDefault(o => o.Name == permission.Name) ?? permission);
             }
             context.Roles.AddOrUpdate(o => o.Name, roleAdmin);
+        }
+
+        private static void CreateModifyRole(DbContext context)
+        {
+            var role = new Role
+            {
+                Id = Guid.Parse("DA2A9238-EFF2-4EC1-BD4E-3D10844D1613"),
+                Name = "Tiedonohjaussuunnitelman muokkaaja"
+            };
+            role.Permissions.Add(context.Permissions.FirstOrDefault(o => o.Name == "EDIT_CLASSIFICATION"));
+
+            context.Roles.AddOrUpdate(o => o.Name, role);
         }
 
         private static IEnumerable<Permission> Permissions
