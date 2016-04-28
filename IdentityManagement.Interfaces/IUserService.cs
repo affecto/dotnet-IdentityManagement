@@ -9,6 +9,7 @@ namespace Affecto.IdentityManagement.Interfaces
         bool IsExistingUserAccount(string accountName, AccountType accountType);
         IUser GetUser(string accountName, AccountType accountType);
         Guid AddUser(string accountName, AccountType type, string displayName, IEnumerable<string> authenticatedGroups);
+        Guid AddUser(string accountName, AccountType type, string displayName, IEnumerable<string> authenticatedGroups, IEnumerable<KeyValuePair<string, string>> customProperties);
         void UpdateUserGroupsAndRoles(string accountName, AccountType accountType, IEnumerable<string> authenticatedGroups);
         bool IsMatchingPassword(string accountName, string password);
     }
