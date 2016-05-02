@@ -9,4 +9,4 @@
 [assembly: AssemblyFileVersion("9.0.1.0")]
 
 // This version is used by NuGet:
-[assembly: AssemblyInformationalVersion("9.0.1-prerelease01")]
+[assembly: AssemblyInformationalVersion("9.0.1")]
