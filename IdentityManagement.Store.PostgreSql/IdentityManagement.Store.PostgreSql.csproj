@@ -99,6 +99,10 @@
     <Compile Include="Migrations\201512171329305_AddPermissionForMaintainingAdministrators.Designer.cs">
       <DependentUpon>201512171329305_AddPermissionForMaintainingAdministrators.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605021021542_AddOrganizationEmail.cs" />
+    <Compile Include="Migrations\201605021021542_AddOrganizationEmail.Designer.cs">
+      <DependentUpon>201605021021542_AddOrganizationEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Identifiers.cs" />
     <Compile Include="Migrations\IdentityManagementMigration.cs" />
@@ -148,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512171329305_AddPermissionForMaintainingAdministrators.resx">
       <DependentUpon>201512171329305_AddPermissionForMaintainingAdministrators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605021021542_AddOrganizationEmail.resx">
+      <DependentUpon>201605021021542_AddOrganizationEmail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
