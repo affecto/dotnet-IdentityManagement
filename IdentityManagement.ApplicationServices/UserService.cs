@@ -66,8 +66,15 @@ namespace Affecto.IdentityManagement.ApplicationServices
 
         public Guid AddUser(string accountName, AccountType type, string displayName, IEnumerable<string> authenticatedGroups)
         {
+            return AddUser(accountName, type, displayName, authenticatedGroups, null);
+        }
+
+        public Guid AddUser(string accountName, AccountType type, string displayName, IEnumerable<string> authenticatedGroups, 
+            IEnumerable<KeyValuePair<string, string>> customProperties)
+        {
             Guid userId = Guid.NewGuid();
-            var createUserCommand = new CreateUserCommand(userId, displayName, null);
+            var properties = customProperties != null ? customProperties.ToList() : null;
+            var createUserCommand = new CreateUserCommand(userId, displayName, properties);
             commandBus.Value.Send(Envelope.Create(createUserCommand));
 
             var createAccountCommand = new CreateExternalUserAccountCommand(userId, type, accountName);

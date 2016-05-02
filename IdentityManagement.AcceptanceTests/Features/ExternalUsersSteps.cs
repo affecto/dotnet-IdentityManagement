@@ -125,6 +125,22 @@ namespace Affecto.IdentityManagement.AcceptanceTests.Features
             AssertCaughtException<EntityNotFoundException>();
         }
 
+        [When(@"a new external user '(.+)' is added with custom property '(.+)' set to '(.+)'")]
+        public void WhenANewExternalUserIsAddedWithCustomPropertySetTo(string user, string customPropertyName, string customPropertyValue)
+        {
+            ExternalUser externalUser = GetExternalUser(user);
+            var customProperties = new List<KeyValuePair<string, string>> { new KeyValuePair<string, string>(customPropertyName, customPropertyValue) };
+            Try(() => UserService.AddUser(externalUser.accountName, externalUser.accountType, externalUser.displayName, externalUser.memberOfGroups, customProperties));
+        }
+
+        [Then(@"user '(.+)' has custom property '(.+)' with the value '(.+)'")]
+        public void ThenUserHasCustomPropertyWithTheValue(string userName, string customPropertyName, string customPropertyValue)
+        {
+            Guid userId = MockDatabase.GetUser(userName).Id;
+            IUser user = IdentityManagementService.GetUser(userId);
+            Assert.IsTrue(user.CustomProperties.Any(p => p.Name.Equals(customPropertyName) && p.Value.Equals(customPropertyValue)));
+        }
+
         private AccountType ResolveAccountType(string type)
         {
             switch (type)

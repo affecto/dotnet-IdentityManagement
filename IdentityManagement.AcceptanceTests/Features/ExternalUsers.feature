@@ -54,6 +54,13 @@ Scenario: Add new external user with groups and roles
          | g2    |
          | g4    |
 
+ Scenario: Add new external user with custom properties
+    When a new external user 'Hank' is added with custom property 'Email' set to 'hank@gmail.com'
+    Then the following users exist:
+         | Name          |
+         | Hank Jennings |
+    And user 'Hank Jennings' has custom property 'Email' with the value 'hank@gmail.com'
+
 Scenario: Update groups and roles of existing external user
     Given a new external user 'Hank' is added
     And the external group name of the group 'g3' is changed to 'group4'
