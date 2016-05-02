@@ -7,6 +7,6 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-IdentityManagement</projectUrl>
     <tags>affecto identitymanagement identity management user users role roles group groups web api webapi rest</tags>
-    <releaseNotes>Added organization email.</releaseNotes>
+    <releaseNotes>Raised version number because of raised prereleases of project dependencies.</releaseNotes>
   </metadata>
 </package>

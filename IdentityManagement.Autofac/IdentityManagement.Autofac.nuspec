@@ -7,6 +7,6 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-IdentityManagement</projectUrl>
     <tags>affecto identitymanagement identity management user users role roles group groups autofac</tags>
-    <releaseNotes>Fix automapper cast</releaseNotes>
+    <releaseNotes>Add user service method for adding a user with custom properties.</releaseNotes>
   </metadata>
 </package>

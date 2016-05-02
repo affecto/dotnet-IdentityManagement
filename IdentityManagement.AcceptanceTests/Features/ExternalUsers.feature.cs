@@ -10,12 +10,12 @@
 //  </auto-generated>
 // ------------------------------------------------------------------------------
 #region Designer generated code
-
-using TechTalk.SpecFlow;
-
 #pragma warning disable
 namespace Affecto.IdentityManagement.AcceptanceTests.Features
 {
+    using TechTalk.SpecFlow;
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
@@ -48,7 +48,7 @@ namespace Affecto.IdentityManagement.AcceptanceTests.Features
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
                         && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "ExternalUsers")))
             {
-                ExternalUsersFeature.FeatureSetup(null);
+                Affecto.IdentityManagement.AcceptanceTests.Features.ExternalUsersFeature.FeatureSetup(null);
             }
         }
         
@@ -224,62 +224,88 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Update groups and roles of existing external user")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add new external user with custom properties")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ExternalUsers")]
-        public virtual void UpdateGroupsAndRolesOfExistingExternalUser()
+        public virtual void AddNewExternalUserWithCustomProperties()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update groups and roles of existing external user", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new external user with custom properties", ((string[])(null)));
 #line 57
-this.ScenarioSetup(scenarioInfo);
+ this.ScenarioSetup(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 58
-    testRunner.Given("a new external user \'Hank\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 59
-    testRunner.And("the external group name of the group \'g3\' is changed to \'group4\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
-    testRunner.And("the external group name of the group \'g4\' is changed to \'group5\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
-    testRunner.And("the external group name of the group \'g2\' is cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
-    testRunner.And("the external group name of the role \'r1\' is changed to \'group4\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
-    testRunner.And("the external group name of the role \'r2\' is changed to \'group5\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
-    testRunner.And("the external group name of the role \'r3\' is cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
-    testRunner.When("information of external user \'Hank\' is updated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("a new external user \'Hank\' is added with custom property \'Email\' set to \'hank@gma" +
+                    "il.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name"});
             table8.AddRow(new string[] {
                         "Hank Jennings"});
-#line 66
+#line 59
     testRunner.Then("the following users exist:", ((string)(null)), table8, "Then ");
+#line 62
+    testRunner.And("user \'Hank Jennings\' has custom property \'Email\' with the value \'hank@gmail.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Update groups and roles of existing external user")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ExternalUsers")]
+        public virtual void UpdateGroupsAndRolesOfExistingExternalUser()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update groups and roles of existing external user", ((string[])(null)));
+#line 64
+this.ScenarioSetup(scenarioInfo);
+#line 3
+this.FeatureBackground();
+#line 65
+    testRunner.Given("a new external user \'Hank\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 66
+    testRunner.And("the external group name of the group \'g3\' is changed to \'group4\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+    testRunner.And("the external group name of the group \'g4\' is changed to \'group5\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+    testRunner.And("the external group name of the group \'g2\' is cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
-    testRunner.And("user \'Hank Jennings\' has an active directory account with name \'hank@domain\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the external group name of the role \'r1\' is changed to \'group4\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+    testRunner.And("the external group name of the role \'r2\' is changed to \'group5\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+    testRunner.And("the external group name of the role \'r3\' is cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+    testRunner.When("information of external user \'Hank\' is updated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Role"});
+                        "Name"});
             table9.AddRow(new string[] {
-                        "r1"});
-            table9.AddRow(new string[] {
-                        "r3"});
-            table9.AddRow(new string[] {
-                        "r4"});
-#line 70
-    testRunner.And("the user \'Hank Jennings\' has the following roles:", ((string)(null)), table9, "And ");
+                        "Hank Jennings"});
+#line 73
+    testRunner.Then("the following users exist:", ((string)(null)), table9, "Then ");
+#line 76
+    testRunner.And("user \'Hank Jennings\' has an active directory account with name \'hank@domain\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Role"});
+            table10.AddRow(new string[] {
+                        "r1"});
+            table10.AddRow(new string[] {
+                        "r3"});
+            table10.AddRow(new string[] {
+                        "r4"});
+#line 77
+    testRunner.And("the user \'Hank Jennings\' has the following roles:", ((string)(null)), table10, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Group"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "g1"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "g2"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "g3"});
-#line 75
-    testRunner.And("the user \'Hank Jennings\' has is a member of the following groups:", ((string)(null)), table10, "And ");
+#line 82
+    testRunner.And("the user \'Hank Jennings\' has is a member of the following groups:", ((string)(null)), table11, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
