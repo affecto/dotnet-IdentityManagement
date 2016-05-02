@@ -7,6 +7,6 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-IdentityManagement</projectUrl>
     <tags>affecto identitymanagement identity management user users role roles group groups store database postgre sql postgresql postgres</tags>
-    <releaseNotes>Added database migration for maintaining administrator users.</releaseNotes>
+    <releaseNotes>Raised version number because of raised prereleases of project dependencies.</releaseNotes>
   </metadata>
 </package>
