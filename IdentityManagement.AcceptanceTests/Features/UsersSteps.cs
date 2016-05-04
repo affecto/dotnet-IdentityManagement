@@ -51,6 +51,15 @@ namespace Affecto.IdentityManagement.AcceptanceTests.Features
             });
         }
 
+        [When(@"active directory users are searched by custom property name '(.+)' and value '(.+)'")]
+        public void WhenExternalActiveDirectoryUsersAreSearchedByCustomPropertyNameAndValue(string customPropertyName, string customPropertyValue)
+        {
+            Try(() =>
+            {
+                returnedUsers = IdentityManagementService.GetUsers(customPropertyName, customPropertyValue, AccountType.ActiveDirectory).ToList();
+            });
+        }
+
         [Then(@"the following users having custom properties are returned:")]
         public void ThenTheUserIsReturnedHavingTheFollowingCustomProperties(Table users)
         {

@@ -23,7 +23,7 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests.Queries
             var userName = "Mike Johnsson";
             var accountName = "dev\\johnmik";
 
-            AddUser(userId, userName, accountName);
+            AddActiveDirectoryUser(userId, userName, accountName);
 
             var accounts = sut.GetAccounts(userId);
 

@@ -37,6 +37,14 @@ namespace Affecto.IdentityManagement.Store.EntityFramework
             return new UserMapper().Map(users).ToList();
         }
 
+        public IReadOnlyCollection<User> GetUsers(string customPropertyName, string customPropertyValue, AccountType accountType)
+        {
+            var query = new UsersByCustomPropertyAndAccountTypeQuery(dbContext.Users);
+            IQueryable<Model.User> users = query.Execute(customPropertyName, customPropertyValue, (Model.AccountType)accountType);
+
+            return new UserMapper().Map(users).ToList();
+        }
+
         public User GetUser(Guid userId)
         {
             var query = new UserByIdQuery(dbContext.Users);
@@ -53,7 +61,7 @@ namespace Affecto.IdentityManagement.Store.EntityFramework
         public User GetUser(string accountName, AccountType accountType)
         {
             var query = new UserByAccountQuery(dbContext.Users);
-            var user = query.Execute(new UserByAccountQuery.UserAccount(accountName, (Model.AccountType)accountType));
+            var user = query.Execute(accountName, (Model.AccountType)accountType);
 
             if (user == null)
             {
@@ -66,7 +74,7 @@ namespace Affecto.IdentityManagement.Store.EntityFramework
         public string GetPassword(string accountName)
         {
             var query = new UserByAccountQuery(dbContext.Users);
-            Model.User user = query.Execute(new UserByAccountQuery.UserAccount(accountName, Model.AccountType.Password));
+            Model.User user = query.Execute(accountName, Model.AccountType.Password);
 
             if (user == null)
             {
@@ -80,7 +88,7 @@ namespace Affecto.IdentityManagement.Store.EntityFramework
         public bool IsExistingUser(string accountName, AccountType accountType)
         {
             var query = new UserByAccountQuery(dbContext.Users);
-            return query.Execute(new UserByAccountQuery.UserAccount(accountName, (Model.AccountType)accountType)) != null;
+            return query.Execute(accountName, (Model.AccountType)accountType) != null;
         }
 
         public IReadOnlyCollection<Account> GetAccounts(Guid userId)

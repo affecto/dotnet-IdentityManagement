@@ -1,26 +1,20 @@
-﻿using System.Data.Entity;
-using System.Linq;
+﻿using System.Linq;
 using Affecto.IdentityManagement.Store.Model;
 
 namespace Affecto.IdentityManagement.Store.EntityFramework.Queries
 {
     internal class UsersByCustomPropertyQuery
     {
-        private readonly IQueryable<User> users;
+        private readonly UserQueryBuilder queryBuilder;
 
         public UsersByCustomPropertyQuery(IQueryable<User> users)
         {
-            this.users = users;
+            queryBuilder = new UserQueryBuilder(users);
         }
 
         public IQueryable<User> Execute(string customPropertyName, string customPropertyValue)
         {
-            return users
-                .Include(u => u.Accounts)
-                .Include(u => u.Roles.Select(r => r.Permissions))
-                .Include(u => u.Groups)
-                .Include(u => u.Organizations)
-                .Include(u => u.CustomProperties)
+            return queryBuilder.IncludeAll()
                 .Where(u => u.CustomProperties.Any(c => c.Name == customPropertyName && c.Value == customPropertyValue));
         }
     }

@@ -77,8 +77,8 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests.Queries
             permissionsId1 = Guid.NewGuid();
             permissionsId2 = Guid.NewGuid();
 
-            AddUser(userId1, "Name1", "dev\\account1");
-            AddUser(userId2, "Name2", "dev\\account2");
+            AddActiveDirectoryUser(userId1, "Name1", "dev\\account1");
+            AddActiveDirectoryUser(userId2, "Name2", "dev\\account2");
             AddRole(roleId1, roleName1);
             AddRole(roleId2, roleName2);
 

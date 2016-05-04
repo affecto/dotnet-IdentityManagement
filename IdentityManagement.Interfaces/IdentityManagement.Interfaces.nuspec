@@ -7,6 +7,6 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-IdentityManagement</projectUrl>
     <tags>affecto identitymanagement identity management user users role roles group groups interface interfaces</tags>
-    <releaseNotes>Add user service method for adding a user with custom properties.</releaseNotes>
+    <releaseNotes>Add identity management service method for getting users with a custom property and account type.</releaseNotes>
   </metadata>
 </package>

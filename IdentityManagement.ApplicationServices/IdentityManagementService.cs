@@ -51,6 +51,12 @@ namespace Affecto.IdentityManagement.ApplicationServices
             return mapper.Map(queryService.GetUsers(customPropertyName, customPropertyValue));
         }
 
+        public IEnumerable<IUser> GetUsers(string customPropertyName, string customPropertyValue, AccountType accountType)
+        {
+            var mapper = new UserMapper();
+            return mapper.Map(queryService.GetUsers(customPropertyName, customPropertyValue, (Querying.Data.AccountType)accountType));
+        }
+
         public IUser GetUser(Guid userId)
         {
             var mapper = new UserMapper();

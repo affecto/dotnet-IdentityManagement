@@ -29,7 +29,7 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests
             dbContext.Dispose();
         }
 
-        protected static void AddUser(Guid userId, string name, string accountName, bool isDisabled = false,
+        protected static void AddActiveDirectoryUser(Guid userId, string name, string accountName, bool isDisabled = false,
             IEnumerable<KeyValuePair<string, string>> customProperties = null)
         {
             using (DbContext writeDbContext = new DbContext())
@@ -156,12 +156,12 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests
             }
         }
 
-        protected static void AddUserToOrganization(Guid userId, Guid organizationId)
+        protected static void AddUserToOrganization(Guid organizationId, Guid userId)
         {
             using (DbContext writeDbContext = new DbContext())
             {
                 User user = writeDbContext.Users.Single(u => u.Id == userId);
-                Organization organization = writeDbContext.Organizations.Single(r => r.Id == organizationId);
+                Organization organization = writeDbContext.Organizations.Single(o => o.Id == organizationId);
                 user.Organizations.Add(organization);
 
                 writeDbContext.SaveChanges();
