@@ -238,3 +238,26 @@ Scenario: Getting users by custom property value
     | Name           | EmailAddress       | OrganizationId                       | StreetAddress |
     | Hank Jennings  | hank@jennings.net  | DB42B633-DE5C-4414-A20F-D57AAED283C1 | Street 123    |
     | Norma Jennings | norma@jennings.net | C59A38A6-9414-433A-8611-181B1F96B7EC | Street 123    |
+
+Scenario: Getting users by custom property and account type
+    Given a user 'Hank Jennings' is added with the following custom properties:
+    | Name           | Value                                |
+    | EmailAddress   | hank@jennings.net                    |
+    | OrganizationId | C59A38A6-9414-433A-8611-181B1F96B7EC |
+    | StreetAddress  | Street 123                           |
+	And an active directory account with name 'jennihan' is added for user 'Hank Jennings'
+	And a user 'Jean Jennings' is added with the following custom properties:
+    | Name           | Value                                |
+    | EmailAddress   | jean@jennings.net                    |
+    | OrganizationId | C59A38A6-9414-433A-8611-181B1F96B7EC |
+    | StreetAddress  | Street 321                           |
+	And an active directory account with name 'jennijea' is added for user 'Jean Jennings'
+	And a user 'Norma Jennings' is added with the following custom properties:
+    | Name           | Value                                |
+    | EmailAddress   | norma@jennings.net                   |
+    | OrganizationId | C59A38A6-9414-433A-8611-181B1F96B7EC |
+    | StreetAddress  | Street 123                           |
+	When active directory users are searched by custom property name 'StreetAddress' and value 'Street 123'
+    Then the following users having custom properties are returned:
+    | Name           | EmailAddress       | OrganizationId                       |  StreetAddress |
+    | Hank Jennings  | hank@jennings.net  | C59A38A6-9414-433A-8611-181B1F96B7EC |  Street 123    |

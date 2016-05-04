@@ -53,7 +53,8 @@ namespace Affecto.IdentityManagement.ApplicationServices
 
         public IEnumerable<IUser> GetUsers(string customPropertyName, string customPropertyValue, AccountType accountType)
         {
-            throw new NotImplementedException();
+            var mapper = new UserMapper();
+            return mapper.Map(queryService.GetUsers(customPropertyName, customPropertyValue, (Querying.Data.AccountType)accountType));
         }
 
         public IUser GetUser(Guid userId)
