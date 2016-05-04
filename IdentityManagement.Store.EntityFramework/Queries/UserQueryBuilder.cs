@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
-using System.Linq.Expressions;
 using Affecto.IdentityManagement.Store.Model;
 
 namespace Affecto.IdentityManagement.Store.EntityFramework.Queries
 {
-    internal abstract class UserQuery<TIdentifier>
+    internal class UserQueryBuilder
     {
         private readonly IQueryable<User> users;
 
-        protected UserQuery(IQueryable<User> users)
+        public UserQueryBuilder(IQueryable<User> users)
         {
             if (users == null)
             {
@@ -19,19 +18,14 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.Queries
             this.users = users;
         }
 
-        public User Execute(TIdentifier userId)
+        public IQueryable<User> IncludeAll()
         {
-            User user = users
+            return users
                 .Include(u => u.Accounts)
                 .Include(u => u.Roles.Select(r => r.Permissions))
                 .Include(u => u.Groups)
                 .Include(u => u.Organizations)
-                .Include(u => u.CustomProperties)
-                .SingleOrDefault(GetUserIdentifierMatchesPredicate(userId));
-
-            return user;
+                .Include(u => u.CustomProperties);
         }
-
-        protected abstract Expression<Func<User, bool>> GetUserIdentifierMatchesPredicate(TIdentifier userId);
     }
 }

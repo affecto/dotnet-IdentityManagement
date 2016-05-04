@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Linq;
-using System.Linq.Expressions;
 using Affecto.IdentityManagement.Store.Model;
 
 namespace Affecto.IdentityManagement.Store.EntityFramework.Queries
 {
-    internal class UserByIdQuery : UserQuery<Guid>
+    internal class UserByIdQuery
     {
+        private readonly UserQueryBuilder queryBuilder;
+
         public UserByIdQuery(IQueryable<User> users)
-            : base(users)
         {
+            queryBuilder = new UserQueryBuilder(users);
         }
 
-        protected override Expression<Func<User, bool>> GetUserIdentifierMatchesPredicate(Guid userId)
+        public User Execute(Guid userId)
         {
-            return user => user.Id == userId;
+            return queryBuilder.IncludeAll()
+                .SingleOrDefault(u => u.Id == userId);
         }
     }
 }
