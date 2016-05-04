@@ -10,12 +10,12 @@
 //  </auto-generated>
 // ------------------------------------------------------------------------------
 #region Designer generated code
-
-using TechTalk.SpecFlow;
-
 #pragma warning disable
 namespace Affecto.IdentityManagement.AcceptanceTests.Features
 {
+    using TechTalk.SpecFlow;
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
@@ -48,7 +48,7 @@ namespace Affecto.IdentityManagement.AcceptanceTests.Features
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
                         && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "Users")))
             {
-                UsersFeature.FeatureSetup(null);
+                Affecto.IdentityManagement.AcceptanceTests.Features.UsersFeature.FeatureSetup(null);
             }
         }
         
@@ -865,6 +865,85 @@ this.ScenarioSetup(scenarioInfo);
                         "Street 123"});
 #line 237
     testRunner.Then("the following users having custom properties are returned:", ((string)(null)), table12, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Getting users by custom property and account type")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Users")]
+        public virtual void GettingUsersByCustomPropertyAndAccountType()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting users by custom property and account type", ((string[])(null)));
+#line 242
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value"});
+            table13.AddRow(new string[] {
+                        "EmailAddress",
+                        "hank@jennings.net"});
+            table13.AddRow(new string[] {
+                        "OrganizationId",
+                        "C59A38A6-9414-433A-8611-181B1F96B7EC"});
+            table13.AddRow(new string[] {
+                        "StreetAddress",
+                        "Street 123"});
+#line 243
+    testRunner.Given("a user \'Hank Jennings\' is added with the following custom properties:", ((string)(null)), table13, "Given ");
+#line 248
+ testRunner.And("an active directory account with name \'jennihan\' is added for user \'Hank Jennings" +
+                    "\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value"});
+            table14.AddRow(new string[] {
+                        "EmailAddress",
+                        "jean@jennings.net"});
+            table14.AddRow(new string[] {
+                        "OrganizationId",
+                        "C59A38A6-9414-433A-8611-181B1F96B7EC"});
+            table14.AddRow(new string[] {
+                        "StreetAddress",
+                        "Street 321"});
+#line 249
+ testRunner.And("a user \'Jean Jennings\' is added with the following custom properties:", ((string)(null)), table14, "And ");
+#line 254
+ testRunner.And("an active directory account with name \'jennijea\' is added for user \'Jean Jennings" +
+                    "\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value"});
+            table15.AddRow(new string[] {
+                        "EmailAddress",
+                        "norma@jennings.net"});
+            table15.AddRow(new string[] {
+                        "OrganizationId",
+                        "C59A38A6-9414-433A-8611-181B1F96B7EC"});
+            table15.AddRow(new string[] {
+                        "StreetAddress",
+                        "Street 123"});
+#line 255
+ testRunner.And("a user \'Norma Jennings\' is added with the following custom properties:", ((string)(null)), table15, "And ");
+#line 260
+ testRunner.When("active directory users are searched by custom property name \'StreetAddress\' and v" +
+                    "alue \'Street 123\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "EmailAddress",
+                        "OrganizationId",
+                        "StreetAddress"});
+            table16.AddRow(new string[] {
+                        "Hank Jennings",
+                        "hank@jennings.net",
+                        "C59A38A6-9414-433A-8611-181B1F96B7EC",
+                        "Street 123"});
+#line 261
+    testRunner.Then("the following users having custom properties are returned:", ((string)(null)), table16, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

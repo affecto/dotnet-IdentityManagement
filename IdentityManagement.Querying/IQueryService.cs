@@ -8,6 +8,7 @@ namespace Affecto.IdentityManagement.Querying
     {
         IReadOnlyCollection<User> GetUsers();
         IReadOnlyCollection<User> GetUsers(string customPropertyName, string customPropertyValue);
+        IReadOnlyCollection<User> GetUsers(string customPropertyName, string customPropertyValue, AccountType accountType);
         User GetUser(Guid userId);
         User GetUser(string accountName, AccountType accountType);
         bool IsExistingUser(string accountName, AccountType accountType);

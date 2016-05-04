@@ -119,8 +119,9 @@
     <Compile Include="Queries\RoleExistsQuery.cs" />
     <Compile Include="Queries\RoleQuery.cs" />
     <Compile Include="Queries\AccountQuery.cs" />
+    <Compile Include="Queries\UserQueryBuilder.cs" />
+    <Compile Include="Queries\UsersByCustomPropertyAndAccountTypeQuery.cs" />
     <Compile Include="Queries\UsersByCustomPropertyQuery.cs" />
-    <Compile Include="Queries\UserQuery.cs" />
     <Compile Include="Queries\PermissionQuery.cs" />
     <Compile Include="QueryService.cs" />
     <Compile Include="Mapping\GroupMapper.cs" />

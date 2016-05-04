@@ -229,11 +229,11 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests.Queries
             Guid roleId = Guid.NewGuid();
             Guid permissionId = Guid.NewGuid();
 
-            AddUser(userId1, name1, accountName1, false, user1CustomProperties);
-            AddUser(userId2, name2, accountName2);
+            AddActiveDirectoryUser(userId1, name1, accountName1, false, user1CustomProperties);
+            AddActiveDirectoryUser(userId2, name2, accountName2);
 
             AddOrganization(organizationId, "R&D");
-            AddUserToOrganization(userId1, organizationId);
+            AddUserToOrganization(organizationId, userId1);
 
             AddGroup(groupId, "Developers");
             AddUserToGroup(groupId, userId2);

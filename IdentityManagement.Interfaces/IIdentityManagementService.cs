@@ -8,6 +8,7 @@ namespace Affecto.IdentityManagement.Interfaces
     {
         IEnumerable<IUserListItem> GetUsers();
         IEnumerable<IUser> GetUsers(string customPropertyName, string customPropertyValue);
+        IEnumerable<IUser> GetUsers(string customPropertyName, string customPropertyValue, AccountType accountType);
         IUser GetUser(Guid userId);
         IUserListItem CreateUser(string name);
         void UpdateUser(Guid id, string name, bool isDisabled);
