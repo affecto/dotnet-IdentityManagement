@@ -136,9 +136,9 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.DatabaseTests.Queries
             AddGroup(groupId1, groupName1);
             AddGroup(groupId2, groupName2);
 
-            AddUser(group1User1, "Name1", "dev\\account1");
-            AddUser(groupUser, "Name2", "dev\\account2");
-            AddUser(group2User1, "Name3", "dev\\account3");
+            AddActiveDirectoryUser(group1User1, "Name1", "dev\\account1");
+            AddActiveDirectoryUser(groupUser, "Name2", "dev\\account2");
+            AddActiveDirectoryUser(group2User1, "Name3", "dev\\account3");
 
             AddUserToGroup(groupId1, groupUser);
             AddUserToGroup(groupId2, groupUser);
