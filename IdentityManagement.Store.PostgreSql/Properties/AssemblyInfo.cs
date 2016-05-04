@@ -10,6 +10,6 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyFileVersion("8.2.1.0")]
 
 // This version is used by NuGet:
-[assembly: AssemblyInformationalVersion("8.2.1-prerelease01")]
+[assembly: AssemblyInformationalVersion("8.2.1")]
 
 [assembly: InternalsVisibleTo("Affecto.IdentityManagement.Store.Mocking")]
