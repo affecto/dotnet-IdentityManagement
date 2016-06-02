@@ -6,10 +6,10 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyProduct("Affecto.IdentityManagement")]
 [assembly: AssemblyCompany("Affecto")]
 
-[assembly: AssemblyVersion("8.2.1.0")]
-[assembly: AssemblyFileVersion("8.2.1.0")]
+[assembly: AssemblyVersion("8.2.2.0")]
+[assembly: AssemblyFileVersion("8.2.2.0")]
 
 // This version is used by NuGet:
-[assembly: AssemblyInformationalVersion("8.2.1")]
+[assembly: AssemblyInformationalVersion("8.2.2-prerelease01")]
 
 [assembly: InternalsVisibleTo("Affecto.IdentityManagement.Store.Mocking")]
