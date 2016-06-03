@@ -1,4 +1,5 @@
 using Affecto.EntityFramework.PostgreSql;
+using Affecto.EntityFramework.PostgreSql.Configuration;
 using Affecto.IdentityManagement.Store.EntityFramework;
 
 namespace Affecto.IdentityManagement.Store.PostgreSql.Migrations

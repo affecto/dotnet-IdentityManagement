@@ -5,8 +5,8 @@
 [assembly: AssemblyProduct("Affecto.IdentityManagement")]
 [assembly: AssemblyCompany("Affecto")]
 
-[assembly: AssemblyVersion("8.0.3.0")]
-[assembly: AssemblyFileVersion("8.0.3.0")]
+[assembly: AssemblyVersion("8.0.4.0")]
+[assembly: AssemblyFileVersion("8.0.4.0")]
 
 // This version is used by NuGet:
-[assembly: AssemblyInformationalVersion("8.0.3")]
+[assembly: AssemblyInformationalVersion("8.0.4")]
