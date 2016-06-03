@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using Affecto.EntityFramework.PostgreSql;
+using Affecto.EntityFramework.PostgreSql.Configuration;
 using Affecto.IdentityManagement.Store.EntityFramework;
 using Autofac;
 using DbContext = Affecto.IdentityManagement.Store.EntityFramework.DbContext;
