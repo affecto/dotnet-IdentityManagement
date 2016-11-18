@@ -23,7 +23,7 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.Migrations
 
         private static void CreateMissingPermissions(IDbContext context)
         {
-            IEnumerable<Permission> newPermissions = context.Permissions.ToList().Where(o => Permissions.All(p => o.Name != p.Name));
+            IEnumerable<Permission> newPermissions = Permissions.Where(o => context.Permissions.All(p => o.Name != p.Name));
             foreach (var permission in newPermissions)
             {
                 context.Permissions.AddOrUpdate(o => o.Name, permission);
@@ -68,7 +68,8 @@ namespace Affecto.IdentityManagement.Store.EntityFramework.Migrations
                     new Permission { Id = Guid.NewGuid(), Name = "APPROVE_CHANGESETS", Description = "Muutoksien hyv‰ksymisoikeus" },
                     new Permission { Id = Guid.NewGuid(), Name = "IMPORT_CLASSIFICATION", Description = "Tiedonohjaussuunnitelman XML-tuontioikeus" },
                     new Permission { Id = Guid.NewGuid(), Name = "EXPORT_CLASSIFICATION", Description = "Tiedonohjaussuunnitelman XML-vientioikeus" },
-                    new Permission { Id = Guid.NewGuid(), Name = "ADD_ROOT_CLASSES", Description = "P‰‰luokan lis‰ysoikeus" }
+                    new Permission { Id = Guid.NewGuid(), Name = "ADD_ROOT_CLASSES", Description = "P‰‰luokan lis‰ysoikeus" },
+                    new Permission { Id = Guid.NewGuid(), Name = "VIEW_AUDITTRAIL", Description = "Tapahtumalokin lukuoikeus" }
                 };
             }
         }
