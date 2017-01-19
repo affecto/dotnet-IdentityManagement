@@ -261,3 +261,38 @@ Scenario: Getting users by custom property and account type
     Then the following users having custom properties are returned:
     | Name           | EmailAddress       | OrganizationId                       |  StreetAddress |
     | Hank Jennings  | hank@jennings.net  | C59A38A6-9414-433A-8611-181B1F96B7EC |  Street 123    |
+
+Scenario: Changing a user's name and updating custom properties
+    Given a user 'Hank Jennings' is added with the following custom properties:
+    | Name           | Value                                |
+    | EmailAddress   | hank@jennings.net                    |
+    | OrganizationId | DB42B633-DE5C-4414-A20F-D57AAED283C1 |
+    | StreetAddress  | Street 1 A                                     |
+    When the users name 'Hank Jennings' is changed to 'Harry Jennings' and the user is updated with the following custom properties:
+    | Name           | Value                                |
+    | EmailAddress   | hank@jennings.com                    |
+    | OrganizationId | 647d7511-f9a2-4eee-b909-c39450f10534 |
+    | StreetAddress  |                                      |			
+    Then the user 'Harry Jennings' has the following custom properties:
+    | Name           | Value                                |
+    | EmailAddress   | hank@jennings.com                    |
+    | OrganizationId | 647d7511-f9a2-4eee-b909-c39450f10534 |
+    | StreetAddress  |                                      |
+ 
+ Scenario: Changing a password accounts password
+    Given a user 'Hank Jennings' is added
+    And an account with name 'hank@domain' and password 'VerySecret' is added for user 'Hank Jennings'
+	When the password of the user 'Hank Jennings' is changed to 'VeryVerySecret'
+    Then user 'Hank Jennings' has an account with name 'hank@domain' and password 'VeryVerySecret'
+
+Scenario: Changing a password accounts password without specifying new password
+    Given a user 'Hank Jennings' is added
+    And an account with name 'hank@domain' and password 'VerySecret' is added for user 'Hank Jennings'
+    When the password of the user 'Hank Jennings' is changed to nothing
+    Then changing the password fails because no password is specified
+
+Scenario: Changing a password of non password account
+    Given a user 'Hank Jennings' is added
+    And an active directory account with name 'hank@domain' is added for user 'Hank Jennings'
+    When the password of the user 'Hank Jennings' is changed to 'VeryVerySecret'
+    Then changing the password fails because no password account is found
