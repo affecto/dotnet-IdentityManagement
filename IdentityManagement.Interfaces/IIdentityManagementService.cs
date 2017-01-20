@@ -12,12 +12,14 @@ namespace Affecto.IdentityManagement.Interfaces
         IUser GetUser(Guid userId);
         IUserListItem CreateUser(string name);
         void UpdateUser(Guid id, string name, bool isDisabled);
+
         void AddUserAccount(Guid userId, string name, string password);
         void AddExternalUserAccount(Guid userId, AccountType type, string name);
         IEnumerable<IAccount> GetUserAccounts(Guid userId);
         void UpdateExternalUserAccount(Guid userId, AccountType type, string name);
         void RemoveUserAccount(Guid userId, AccountType type, string name);
         bool IsExistingUserAccount(string accountName, AccountType type);
+
         void AddUserOrganization(Guid userId, Guid organizationId);
         void RemoveUserOrganization(Guid userId, Guid organizationId);
 
@@ -44,6 +46,9 @@ namespace Affecto.IdentityManagement.Interfaces
         IOrganization GetOrganization(Guid id);
         void UpdateOrganization(Guid id, string name, string description, string email, bool isDisabled);
         IOrganization CreateOrganization(string name, string description);
+
         IUserListItem CreateUser(string name, IEnumerable<KeyValuePair<string, string>> customProperties);
+        void UpdateUser(Guid id, string name, bool isDisabled, IEnumerable<KeyValuePair<string, string>> customProperties);
+        void ChangeUserPassword(Guid userId, string password);
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Affecto.IdentityManagement.Commanding.Commands;
 using Affecto.IdentityManagement.Commanding.Validation;
 using Affecto.IdentityManagement.Store.Model;
@@ -42,5 +44,8 @@ namespace Affecto.IdentityManagement.Commanding.CommandHandlers
                 throw new ArgumentException(specification.GetReasonsForDissatisfactionSeparatedWithNewLine());
             }
         }
+
+        
+           
     }
 }

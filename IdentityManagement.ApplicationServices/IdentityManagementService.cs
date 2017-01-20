@@ -88,6 +88,28 @@ namespace Affecto.IdentityManagement.ApplicationServices
             commandBus.Value.Send(Envelope.Create(command));
         }
 
+
+        public void UpdateUser(Guid id, string name, bool isDisabled, IEnumerable<KeyValuePair<string, string>> customProperties)
+        {
+            userContext.CheckPermission(Permissions.UserMaintenance);
+
+            var properties = customProperties != null ? customProperties.ToList() : new List<KeyValuePair<string, string>>(0);
+
+            var userCommand = new UpdateUserCommand(id, name, isDisabled);
+            commandBus.Value.Send(Envelope.Create(userCommand));
+
+            var propCommand = new UpdateUserCustomPropertiesCommand(id, properties);
+            commandBus.Value.Send(Envelope.Create(propCommand));
+        }
+
+        public void ChangeUserPassword(Guid userId, string password)
+        {
+            userContext.CheckPermission(Permissions.UserMaintenance);
+
+            var command = new ChangeUserPasswordCommand(userId, password);
+            commandBus.Value.Send(Envelope.Create(command));
+        }
+
         public void AddUserAccount(Guid userId, string name, string password)
         {
             userContext.CheckPermission(Permissions.UserMaintenance);

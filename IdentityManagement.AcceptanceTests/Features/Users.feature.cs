@@ -947,6 +947,128 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Changing a user\'s name and updating custom properties")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Users")]
+        public virtual void ChangingAUserSNameAndUpdatingCustomProperties()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changing a user\'s name and updating custom properties", ((string[])(null)));
+#line 265
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value"});
+            table17.AddRow(new string[] {
+                        "EmailAddress",
+                        "hank@jennings.net"});
+            table17.AddRow(new string[] {
+                        "OrganizationId",
+                        "DB42B633-DE5C-4414-A20F-D57AAED283C1"});
+            table17.AddRow(new string[] {
+                        "StreetAddress",
+                        "Street 1 A"});
+#line 266
+    testRunner.Given("a user \'Hank Jennings\' is added with the following custom properties:", ((string)(null)), table17, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value"});
+            table18.AddRow(new string[] {
+                        "EmailAddress",
+                        "hank@jennings.com"});
+            table18.AddRow(new string[] {
+                        "OrganizationId",
+                        "647d7511-f9a2-4eee-b909-c39450f10534"});
+            table18.AddRow(new string[] {
+                        "StreetAddress",
+                        ""});
+#line 271
+    testRunner.When("the users name \'Hank Jennings\' is changed to \'Harry Jennings\' and the user is upd" +
+                    "ated with the following custom properties:", ((string)(null)), table18, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value"});
+            table19.AddRow(new string[] {
+                        "EmailAddress",
+                        "hank@jennings.com"});
+            table19.AddRow(new string[] {
+                        "OrganizationId",
+                        "647d7511-f9a2-4eee-b909-c39450f10534"});
+            table19.AddRow(new string[] {
+                        "StreetAddress",
+                        ""});
+#line 276
+    testRunner.Then("the user \'Harry Jennings\' has the following custom properties:", ((string)(null)), table19, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Changing a password accounts password")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Users")]
+        public virtual void ChangingAPasswordAccountsPassword()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changing a password accounts password", ((string[])(null)));
+#line 282
+ this.ScenarioSetup(scenarioInfo);
+#line 283
+    testRunner.Given("a user \'Hank Jennings\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 284
+    testRunner.And("an account with name \'hank@domain\' and password \'VerySecret\' is added for user \'H" +
+                    "ank Jennings\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 285
+ testRunner.When("the password of the user \'Hank Jennings\' is changed to \'VeryVerySecret\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 286
+    testRunner.Then("user \'Hank Jennings\' has an account with name \'hank@domain\' and password \'VeryVer" +
+                    "ySecret\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Changing a password accounts password without specifying new password")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Users")]
+        public virtual void ChangingAPasswordAccountsPasswordWithoutSpecifyingNewPassword()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changing a password accounts password without specifying new password", ((string[])(null)));
+#line 288
+this.ScenarioSetup(scenarioInfo);
+#line 289
+    testRunner.Given("a user \'Hank Jennings\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 290
+    testRunner.And("an account with name \'hank@domain\' and password \'VerySecret\' is added for user \'H" +
+                    "ank Jennings\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 291
+    testRunner.When("the password of the user \'Hank Jennings\' is changed to nothing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 292
+    testRunner.Then("changing the password fails because no password is specified", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Changing a password of non password account")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Users")]
+        public virtual void ChangingAPasswordOfNonPasswordAccount()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changing a password of non password account", ((string[])(null)));
+#line 294
+this.ScenarioSetup(scenarioInfo);
+#line 295
+    testRunner.Given("a user \'Hank Jennings\' is added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 296
+    testRunner.And("an active directory account with name \'hank@domain\' is added for user \'Hank Jenni" +
+                    "ngs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 297
+    testRunner.When("the password of the user \'Hank Jennings\' is changed to \'VeryVerySecret\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 298
+    testRunner.Then("changing the password fails because no password account is found", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

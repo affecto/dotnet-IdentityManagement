@@ -5,6 +5,7 @@ using Affecto.Authentication.Claims;
 using Affecto.IdentityManagement.AcceptanceTests.Infrastructure;
 using Affecto.IdentityManagement.Interfaces.Exceptions;
 using Affecto.IdentityManagement.Interfaces.Model;
+using Affecto.IdentityManagement.Querying.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 
@@ -293,6 +294,7 @@ namespace Affecto.IdentityManagement.AcceptanceTests.Features
         [Then(@"adding new account fails because of account's name is not specified")]
         [Then(@"updating account fails because of account's name is not specified")]
         [Then(@"adding new account fails because wrong account type is specified")]
+        [Then(@"changing the password fails because no password is specified")]
         public void ThenAddingNewAccountFailsBecauseOfAccountWithSameTypeAlreadyExists()
         {
             AssertCaughtException<ArgumentException>();
@@ -308,6 +310,33 @@ namespace Affecto.IdentityManagement.AcceptanceTests.Features
         public void ThenAddingNewAccountFailsBecauseAccountIsAlreadyAssigned()
         {
             AssertCaughtException<UserAccountAlreadyAssignedException>();
+        }
+
+        [When(@"the users name '(.*)' is changed to '(.*)' and the user is updated with the following custom properties:")]
+        public void WhenTheUsersNameIsChangedAndCustomPropertiesAreUpdated(string userName, string newUserName, Table customPropertiesTable)
+        {
+            UpdateUser(userName, customPropertiesTable, newUserName);
+        }
+
+        [When(@"the password of the user '(.*)' is changed to '(.*)'")]
+        public void WhenThePasswordOfTheUserIsChangedTo(string userName, string passWord)
+        {
+            Guid userId = nameIdentifierPairs[userName];
+            Try(() => IdentityManagementService.ChangeUserPassword(userId, passWord));
+        }
+
+        [When(@"the password of the user '(.*)' is changed to nothing")]
+        public void WhenThePasswordOfTheUserIsChangedToNothing(string userName)
+        {
+            Guid userId = nameIdentifierPairs[userName];
+           
+            Try(() => IdentityManagementService.ChangeUserPassword(userId, ""));
+        }
+
+        [Then(@"changing the password fails because no password account is found")]
+        public void ThenChangingPasswordFailsBecauseOfNoPasswordAccountFound()
+        {
+            AssertCaughtException<AccountNotFoundException>();
         }
 
         private void AddUserAccount(AccountType type, string accountName, string userName)
@@ -330,6 +359,17 @@ namespace Affecto.IdentityManagement.AcceptanceTests.Features
 
             IUserListItem userListItem = IdentityManagementService.CreateUser(userName, customProperties);
             nameIdentifierPairs.Add(userName, userListItem.Id);
+        }
+
+        private void UpdateUser(string userName, Table customPropertiesTable, string newUserName)
+        {
+            List<KeyValuePair<string, string>> customProperties = customPropertiesTable.Rows
+                .Select(row => new KeyValuePair<string, string>(row["Name"], row["Value"]))
+                .ToList();
+
+            Guid userId = nameIdentifierPairs[userName];
+            IdentityManagementService.UpdateUser(userId, newUserName, false, customProperties);
+            
         }
     }
 }
