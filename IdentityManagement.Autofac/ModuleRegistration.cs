@@ -48,6 +48,7 @@ namespace Affecto.IdentityManagement.Autofac
             builder.RegisterType<AddRolePermissionCommandHandler>().AsImplementedInterfaces();
             builder.RegisterType<RemoveRolePermissionCommandHandler>().AsImplementedInterfaces();
             builder.RegisterType<ChangeUserPasswordCommandHandler>().AsImplementedInterfaces();
+            builder.RegisterType<UpdateUserCustomPropertiesCommandHandler>().AsImplementedInterfaces();
         }
     }
 }

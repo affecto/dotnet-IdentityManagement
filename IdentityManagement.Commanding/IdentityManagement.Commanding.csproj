@@ -83,13 +83,14 @@
     <Compile Include="CommandHandlers\CreateUserCommandHandler.cs" />
     <Compile Include="CommandHandlers\RemoveRolePermissionCommandHandler.cs" />
     <Compile Include="CommandHandlers\RemoveUserAccountCommandHandler.cs" />
+    <Compile Include="CommandHandlers\UpdateUserCustomPropertiesCommandHandler.cs" />
     <Compile Include="Commands\AddRolePermissionCommand.cs" />
     <Compile Include="Commands\CreateUserPasswordAccountCommand.cs" />
     <Compile Include="Commands\IUserIdAndNameCommand.cs" />
     <Compile Include="Commands\RemoveRolePermissionCommand.cs" />
     <Compile Include="Commands\RemoveUserAccountCommand.cs" />
     <Compile Include="Commands\ChangeUserPasswordCommand.cs" />
-    <Compile Include="Commands\UpdateUserPropertiesCommand.cs" />
+    <Compile Include="Commands\UpdateUserCustomPropertiesCommand.cs" />
     <Compile Include="IAuditTrailWriter.cs" />
     <Compile Include="CommandHandlers\RemoveGroupMemberCommandHandler.cs" />
     <Compile Include="CommandHandlers\RemoveUserOrganizationCommandHandler.cs" />
