@@ -7,6 +7,9 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-IdentityManagement</projectUrl>
     <tags>affecto identitymanagement identity management user users role roles group groups autofac</tags>
-    <releaseNotes>New permission to view audit trail.</releaseNotes>
+    <releaseNotes>
+      Add identity management service method for updating user with custom properties.
+      Add identity management service method for changing users password.
+    </releaseNotes>
   </metadata>
 </package>
